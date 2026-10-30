@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<!-- ============================================================
+  AGRAJ | Freelance Web Developer Portfolio
+  ------------------------------------------------------------
+  BEGINNER GUIDE:
+  1. This file = structure (HTML)
+  2. style.css = design (colors, layout)
+  3. script.js = behaviour (menu, animation, Add Project)
+  To edit text, just change words inside tags below.
+============================================================ -->
+<html lang="en">
+<head>
+  <!-- Basic setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO: title + description (shows in Google) -->
+  <title>Agraj — Freelance Web Developer | Modern Websites</title>
+  <meta name="description" content="Agraj is a freelance web developer building fast, modern, responsive websites, landing pages & business websites. View projects, services & contact on WhatsApp." />
+  <meta name="keywords" content="Agraj, web developer, freelance web developer, landing page, business website, responsive design, nexbrocode" />
+  <meta name="author" content="Agraj" />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- Social preview (WhatsApp / Instagram) -->
+  <meta property="og:title" content="Agraj — Freelance Web Developer" />
+  <meta property="og:description" content="I build fast, modern & responsive websites for brands and businesses." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon (simple A letter with green bg using SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f5132'/><text x='50' y='68' font-size='55' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>A</text></svg>" />
+
+  <!-- Google Fonts: Poppins (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Tiny inline style to make smooth-scroll work even before CSS loads -->
+  <style>html{scroll-behavior:smooth}body{background:#0a0a0a}</style>
+</head>
+<body>
+
+  <!-- ===== Scroll progress bar (top green line) ===== -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ================= 1. NAVBAR ================= -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <!-- Logo -->
+      <a href="#home" class="logo">Ishvren<span class="logo-dot">.</span><span class="logo-sub">tech</span></a>
+
+      <!-- Desktop links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+      </ul>
+
+      <!-- Right side: status + hamburger -->
+      <div class="nav-right">
+        <span class="avail"><span class="pulse"></span> Available</span>
+        <!-- Hamburger button (mobile only) -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <!-- Mobile dropdown menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#contact" class="m-cta">Contact Me →</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= 2. HERO ================= -->
+    <section id="home" class="hero">
+      <!-- Glowing background blobs -->
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="grid-bg"></div>
+
+      <div class="container hero-grid">
+        <!-- Left: text -->
+        <div class="hero-text">
+          <div class="badge reveal">● Open for freelance projects</div>
+          <p class="hello reveal">Hi, I'm</p>
+          <h1 class="reveal">Agraj <span class="grad">— Web Developer</span></h1>
+          <p class="sub reveal">
+            I build <strong>fast, modern & responsive websites</strong> for creators,
+            startups and local businesses. Clean code. Premium design. Ready to launch.
+          </p>
+          <!-- Buttons -->
+          <div class="hero-btns reveal">
+            <a href="#projects" class="btn btn-primary">View Projects
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-ghost">Contact Me</a>
+          </div>
+          <!-- Small stats -->
+          <div class="hero-stats reveal">
+            <div><strong>10+</strong><span>Projects built</span></div>
+            <div><strong>100%</strong><span>Responsive</span></div>
+            <div><strong>24h</strong><span>Fast reply</span></div>
+          </div>
+        </div>
+
+        <!-- Right: code card (looks like a developer editor) -->
+        <div class="hero-visual reveal">
+          <div class="code-card">
+            <div class="code-top">
+              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+              <span class="code-title">agraj-portfolio.js</span>
+            </div>
+            <pre class="code-body"><code><span class="k">const</span> <span class="v">developer</span> = {
+  name: <span class="s">'Agraj'</span>,
+  role: <span class="s">'Web Developer'</span>,
+  stack: [<span class="s">'HTML'</span>, <span class="s">'CSS'</span>, <span class="s">'JavaScript'</span>],
+  responsive: <span class="b">true</span>,
+  hireable: <span class="b">true</span> <span class="blink">▊</span>
+};</code></pre>
+            <div class="code-foot">
+              <div class="mini-profile"><div class="avatar">A</div><div><b>@nexbrocode</b><small>Freelance Developer</small></div></div>
+              <a class="mini-btn" href="https://wa.me/917302705904" target="_blank" rel="noopener">Hire Me</a>
+            </div>
+          </div>
+          <!-- floating chips -->
+          <div class="chip chip-1">⚡ Fast Loading</div>
+          <div class="chip chip-2">📱 Mobile First</div>
+        </div>
+      </div>
+
+      <!-- Scroll hint -->
+      <a href="#about" class="scroll-hint" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <!-- ================= 3. ABOUT ================= -->
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <div class="about-photo reveal">
+          <div class="photo-frame">
+            <div class="photo">A</div>
+            <div class="exp-card"><strong>1+ yr</strong><span>building for web</span></div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="eyebrow reveal">// about me</p>
+          <h2 class="reveal">Developer who cares about <span class="grad">design & speed.</span></h2>
+          <p class="reveal muted">
+            I'm <strong>Agraj</strong>, a freelance web developer focused on clean,
+            responsive websites. I help small businesses and creators go online with
+            landing pages, business sites, fixes and full redesigns — all mobile-first,
+            SEO-friendly and easy to manage.
+          </p>
+          <p class="reveal muted">
+            Currently deep-diving into <strong>JavaScript</strong> to build more interactive,
+            modern web experiences. My goal is simple: websites that look premium and load fast on any device.
+          </p>
+          <ul class="about-list reveal">
+            <li>✓ Mobile-first, responsive builds</li>
+            <li>✓ Clean, editable code for beginners</li>
+            <li>✓ WhatsApp support & quick delivery</li>
+          </ul>
+          <div class="reveal" style="margin-top:1.2rem;display:flex;gap:.8rem;flex-wrap:wrap">
+            <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+            <a href="#skills" class="btn btn-ghost">My Skills</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. SKILLS ================= -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <p class="eyebrow reveal">// skills</p>
+        <h2 class="reveal">What I work with</h2>
+        <p class="muted reveal" style="max-width:560px">Four core strengths I use on every project. Simple, solid, and always improving.</p>
+
+        <div class="skills-grid">
+          <!-- Skill 1: HTML -->
+          <article class="skill-card reveal">
+            <div class="skill-top"><div class="skill-icon">◈</div><span class="skill-pct">95%</span></div>
+            <h3>HTML5</h3>
+            <p>Semantic, SEO-friendly structure that Google loves and anyone can edit.</p>
+            <div class="bar"><div class="fill" style="--w:95%"></div></div>
+            <small>Semantic • Forms • SEO tags</small>
+          </article>
+          <!-- Skill 2: CSS -->
+          <article class="skill-card reveal">
+            <div class="skill-top"><div class="skill-icon">⬢</div><span class="skill-pct">90%</span></div>
+            <h3>CSS3</h3>
+            <p>Modern flexbox/grid layouts, animations, glow effects and dark themes.</p>
+            <div class="bar"><div class="fill" style="--w:90%"></div></div>
+            <small>Flex • Grid • Animations</small>
+          </article>
+          <!-- Skill 3: JS -->
+          <article class="skill-card reveal highlight">
+            <div class="skill-top"><div class="skill-icon">⬣</div><span class="learn-tag">● learning</span></div>
+            <h3>JavaScript <span class="pct-sm">70%</span></h3>
+            <p>Interactive menus, modals, sliders and IndexedDB-powered features.</p>
+            <div class="bar"><div class="fill" style="--w:70%"></div></div>
+            <small>DOM • Events • IndexedDB</small>
+          </article>
+          <!-- Skill 4: Responsive -->
+          <article class="skill-card reveal">
+            <div class="skill-top"><div class="skill-icon">▣</div><span class="skill-pct">88%</span></div>
+            <h3>Responsive Design</h3>
+            <p>Mobile-first websites that look perfect on phone, tablet and desktop.</p>
+            <div class="bar"><div class="fill" style="--w:88%"></div></div>
+            <small>Mobile-first • Media queries</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. PROJECTS ================= -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow reveal">// portfolio</p>
+            <h2 class="reveal">Featured Projects</h2>
+            <p class="muted reveal">A few recent builds. More added regularly.</p>
+          </div>
+          <!-- OWNER ONLY: hidden unless URL ends with #admin -->
+          <button id="addProjectBtn" class="btn btn-primary admin-only" hidden>＋ Add New</button>
+        </div>
+
+        <p id="adminHint" class="admin-hint admin-only" hidden>🔓 Owner mode ON — you can add & delete projects. Images are saved in this browser (IndexedDB).</p>
+
+        <!-- Project cards grid -->
+        <div class="projects-grid" id="projectGrid">
+          <!-- Default demo project 1 -->
+          <article class="project-card reveal">
+            <div class="p-img"><img src="https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Business website project preview" loading="lazy" /><span class="p-tag">Business</span></div>
+            <div class="p-body">
+              <h3>GrowBiz — Business Website</h3>
+              <p>Modern 5-page business site with WhatsApp enquiry, services & contact form. Loads in under 1s.</p>
+              <div class="p-foot"><a href="#contact" class="p-link">Live Demo →</a><span class="p-stack">HTML • CSS • JS</span></div>
+            </div>
+          </article>
+          <!-- Default demo project 2 -->
+          <article class="project-card reveal">
+            <div class="p-img"><img src="https://images.pexels.com/photos/574069/pexels-photo-574069.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Landing page project preview" loading="lazy" /><span class="p-tag">Landing Page</span></div>
+            <div class="p-body">
+              <h3>LaunchPad — Landing Page</h3>
+              <p>High-converting landing page with hero, pricing, testimonials and sticky CTA for a startup.</p>
+              <div class="p-foot"><a href="#contact" class="p-link">Live Demo →</a><span class="p-stack">HTML • CSS • JS</span></div>
+            </div>
+          </article>
+          <!-- Default demo project 3 -->
+          <article class="project-card reveal">
+            <div class="p-img"><img src="https://images.pexels.com/photos/3888151/pexels-photo-3888151.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="Portfolio redesign project preview" loading="lazy" /><span class="p-tag">Redesign</span></div>
+            <div class="p-body">
+              <h3>DarkFolio — Redesign</h3>
+              <p>Old portfolio rebuilt into a dark-green, mobile-first experience with smooth animations.</p>
+              <div class="p-foot"><a href="#contact" class="p-link">Live Demo →</a><span class="p-stack">Responsive • SEO</span></div>
+            </div>
+          </article>
+          <!-- New projects added by JS (from IndexedDB) will appear here -->
+        </div>
+
+        <!-- Hidden file picker: opens computer file explorer -->
+        <input type="file" id="fileInput" accept="image/*" multiple hidden />
+      </div>
+    </section>
+
+    <!-- ================= 6. SERVICES ================= -->
+    <section id="services" class="section section-alt">
+      <div class="container">
+        <p class="eyebrow reveal">// services</p>
+        <h2 class="reveal">How I can help you</h2>
+        <p class="muted reveal">Simple pricing, fast delivery, WhatsApp support.</p>
+        <div class="services-grid">
+          <article class="service-card reveal"><div class="s-icon">🚀</div><h3>Landing Page</h3><p>One-page site to launch your product, course or event — with CTA that converts.</p><span class="s-price">from ₹2,999</span></article>
+          <article class="service-card reveal"><div class="s-icon">🏢</div><h3>Business Website</h3><p>Complete 4–5 page site: Home, About, Services, Gallery & Contact with maps.</p><span class="s-price">from ₹5,999</span></article>
+          <article class="service-card reveal"><div class="s-icon">🛠️</div><h3>Website Fixes</h3><p>Bugs, slow speed, broken mobile layout or broken links — fixed quickly.</p><span class="s-price">from ₹999</span></article>
+          <article class="service-card reveal"><div class="s-icon">♻️</div><h3>Responsive Redesign</h3><p>Turn your old desktop-only site into a modern mobile-first experience.</p><span class="s-price">from ₹3,999</span></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 7. CONTACT ================= -->
+    <section id="contact" class="section">
+      <div class="container">
+        <p class="eyebrow reveal">// contact</p>
+        <h2 class="reveal">Let's build something <span class="grad">great together.</span></h2>
+        <p class="muted reveal">Fastest reply on WhatsApp. Or send the form below.</p>
+
+        <div class="contact-grid">
+          <!-- Left: quick buttons -->
+          <div class="contact-info reveal">
+            <a class="contact-card wa" href="https://wa.me/917302705904" target="_blank" rel="noopener">
+              <div class="c-icon">💬</div>
+              <div><h3>Chat on WhatsApp</h3><p>+91 73027 05904 • replies in ~1 hour</p></div>
+              <span class="arrow">↗</span>
+            </a>
+            <a class="contact-card ig" href="https://instagram.com/nexbrocode" target="_blank" rel="noopener">
+              <div class="c-icon">📸</div>
+              <div><h3>Instagram</h3><p>@nexbrocode • DMs open</p></div>
+              <span class="arrow">↗</span>
+            </a>
+            <div class="contact-card mail">
+              <div class="c-icon">✉️</div>
+              <div><h3>Email</h3><p>hello@agraj.dev • for detailed briefs</p></div>
+            </div>
+            <div class="response-note">🟢 Usually replies within 24 hours • Mon–Sat</div>
+          </div>
+
+          <!-- Right: form -->
+          <form id="contactForm" class="contact-form reveal" novalidate>
+            <label>Your Name<input type="text" id="cName" name="name" placeholder="e.g. Rahul Sharma" required /></label>
+            <label>Your Email<input type="email" id="cEmail" name="email" placeholder="you@example.com" required /></label>
+            <label>Your Message<textarea id="cMsg" name="message" rows="5" placeholder="Hi Agraj, I need a website for my shop..." required></textarea></label>
+            <button type="submit" class="btn btn-primary btn-full">Send Message ✈</button>
+            <p class="form-note" id="formNote"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= 8. FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><a href="#home" class="logo">Agraj<span class="logo-dot">.</span></a><p class="muted small">Freelance web developer — fast, modern, responsive websites.</p></div>
+      <div class="foot-links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#services">Services</a><a href="#contact">Contact</a></div>
+      <div class="foot-social"><a href="https://wa.me/917302705904" target="_blank" rel="noopener">WhatsApp</a><a href="https://instagram.com/ishvren.tech" target="_blank" rel="noopener">Instagram</a></div>
+    </div>
+    <div class="foot-bottom">© <span id="year"></span> Agraj • Built with HTML, CSS & JS • <a href="#home" style="color:var(--green)">Back to top ↑</a></div>
+  </footer>
+
+  <!-- ===== Modal: details for new project (opened after choosing images) ===== -->
+  <div class="modal-backdrop" id="projectModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h3 id="modalTitle">Add new project</h3>
+      <p class="muted small" id="fileCountText">1 image selected</p>
+      <div class="preview-row" id="previewRow"></div>
+      <label>Project title*<input type="text" id="pTitle" placeholder="e.g. Cafe Website" maxlength="60" /></label>
+      <label>Short description*<textarea id="pDesc" rows="3" placeholder="What is this site about? 1–2 lines." maxlength="200"></textarea></label>
+      <label>Live link (optional)<input type="url" id="pLink" placeholder="https://..." /></label>
+      <div class="modal-btns">
+        <button class="btn btn-ghost" id="modalCancel" type="button">Cancel</button>
+        <button class="btn btn-primary" id="modalSave" type="button">Save Project ✓</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast message (bottom popup) -->
+  <div class="toast" id="toast" hidden></div>
+
+  <!-- Main JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
